@@ -1,0 +1,27 @@
+
+{% extends "index.html" %}
+{% block content %}
+
+
+      <section class="text-center text-white index" style="background-color: black;">
+        <div class="row container justify-content-between align-items-center"  style="height: 100vh; margin: 0 auto;">
+            <h1 class="text-white">WRM Image Uploader</h1>
+          <div class="col-4">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Upload">
+              </form>
+          </div>
+          <div class="col-8">
+           <img src="https://i.postimg.cc/htBFSzzH/saturn.png" alt="">
+          </div>
+      </div>
+      </section>
+      <div class="images-section img-fluid"style="background-color: black;">
+        {% for image in images %}
+          <a href="{{ url_for('serve_image', filename=image) }}" target="_blank">
+            <img width="250px" src="{{ url_for('serve_image', filename=image) }}"/>
+          </a>
+        {% endfor %}
+      </div>
+      {% endblock %}
