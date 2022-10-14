@@ -1,0 +1,6 @@
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: white;
+    color: #333;
+    box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
+    min-width: 250px;
+}
